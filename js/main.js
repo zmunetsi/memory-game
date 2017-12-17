@@ -38,7 +38,7 @@ $(document).ready(function() {
       $(".canvas").append('<div class= "row" id =' + i + ">" + "</div>");
       for (let j = 0; j < c; j++) {
         $("#" + i).append(
-          '<div class= "block text-center col-xs-3 col-sm-3"><img class = "icon img img-fluid img-responsive" src =' +
+          '<div class= "block col-xs-3 col-sm-3"><img class = "icon img img-fluid img-responsive" src =' +
             icons[index] +
             ".png" +
             ">" +
