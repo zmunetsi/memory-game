@@ -3,22 +3,22 @@ $(document).ready(function() {
   let cardPair = [];
 
   let icons = [
-    "images/icons/one",
-    "images/icons/two",
-    "images/icons/three",
-    "images/icons/four",
-    "images/icons/five",
-    "images/icons/six",
-    "images/icons/seven",
-    "images/icons/eight",
-    "images/icons/one",
-    "images/icons/two",
-    "images/icons/three",
-    "images/icons/four",
-    "images/icons/five",
-    "images/icons/six",
-    "images/icons/seven",
-    "images/icons/eight"
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/one.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/two.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/three.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/four.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/five.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/six.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/seven.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/eight.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/one.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/two.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/three.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/four.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/five.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/six.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/seven.png?raw=true",
+    "https://github.com/zmunetsi/memory-game/blob/master/images/icons/eight.png?raw=true"
   ];
   //shuffling cards
   function shuffleCards() {
@@ -38,7 +38,7 @@ $(document).ready(function() {
       $(".canvas").append('<div class= "row" id =' + i + ">" + "</div>");
       for (let j = 0; j < c; j++) {
         $("#" + i).append(
-          '<div class= "block text-center col-sm-6 col-md-3"><img class = "icon img img-responsive" src =' +
+          '<div class= "block text-center col-xs-3 col-sm-3"><img class = "icon img img-fluid img-responsive" src =' +
             icons[index] +
             ".png" +
             ">" +
@@ -52,7 +52,7 @@ $(document).ready(function() {
   makeGrid(4, 4);
 
   $(".restart").on("click", function() {
-    location.reload();
+    location.reload(true);
   });
 
   $(".block").on("click", function() {

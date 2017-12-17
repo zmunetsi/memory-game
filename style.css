@@ -1,9 +1,6 @@
 
 .canvas {
   background: #f45942;
-  width: 100%;
-  height: auto;
-
 }
 
 .block {
@@ -13,34 +10,34 @@
 }
 
 .navbar-brand {
-  font-family: 'Pangolin', cursive;
-  font-family: 'Cabin Sketch', cursive;
+  font-family: "Cabin Sketch", cursive;
   font-size: 30px;
 }
 
-.icon{
-  max-width: 50%;
-  padding: 20px;
+.icon {
   opacity: 0;
+  padding: 10px;
 }
 
-.restart {
-  border: 1px solid #f45942;
-  border-radius: 15px;
-  padding: 3px 6px;
-}
-
-a.restart:focus, .restart:hover{
-  background: #f45942;
+.restart:hover {
   cursor: pointer;
-  color: #fff;
 }
 
-a.instructions:hover {
-  border-bottom: 2px solid #f45942;
+.instructions:hover {
   cursor: pointer;
+}
+
+.btn {
+  margin: 4px;
 }
 
 #dialog {
   display: none;
+  background: #000;
+  color: #fff;
+}
+
+.ui-dialog-titlebar {
+    background: #f45942;
+    max-width: 600px;
 }

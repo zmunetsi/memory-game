@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Pangolin" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="style.css">
@@ -14,27 +14,30 @@
     <div class="container">
       <header>
         <nav class="navbar">
-          <h1 class="navbar-brand">MEMORY GAME</h1>
-          <a class="restart pull-right">RESTART</a>
-          <a class="instructions pull-right">instructions</a>
-
+          <div>
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">MEMORY GAME</a>
+            </div>
+            <ul class="pull-right nav navbar-nav">
+              <li class="restart"><button class="btn btn-sm">Restart</button></li>
+              <li class="instructions"><button class=" btn btn-sm">Instructions</button></li>
+            </ul>
+          </div>
         </nav>
 
       </header>
       <hr>
       <main class="canvas">
-        <div id="dialog" title="instructions">
-          <p>Click on the blocks to reveal icons,If you click blocks and matching icons are revealed.You are
-            on the right track.
-            <br>
-            Once all icons are revealed then the game is over.
+        <div id="dialog" title="INSTRUCTIONS">
+          <p>Click on the blocks to reveal icons,If you click blocks and matching icons are revealed.You are on the right track.
+            <br> Once all icons are revealed then the game is over.
             <hr>
           </p>
         </div>
       </main>
       <hr>
       <footer>
-        <p>Free icons sourced from <a href="https://www.flaticon.com" target ="_blank">Flatcon</a> </p>
+        <p>Free icons sourced from <a href="https://www.flaticon.com" target="_blank">Flatcon</a> </p>
       </footer>
     </div>
     <!--scripts-->
