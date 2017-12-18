@@ -1,6 +1,11 @@
 $(document).ready(function() {
   let clicks = 0;
   let cardPair = [];
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+  let clock;
+  let clockFunction;
 
   let icons = [
     "https://github.com/zmunetsi/memory-game/blob/master/images/icons/one.png?raw=true",
@@ -20,6 +25,50 @@ $(document).ready(function() {
     "https://github.com/zmunetsi/memory-game/blob/master/images/icons/seven.png?raw=true",
     "https://github.com/zmunetsi/memory-game/blob/master/images/icons/eight.png?raw=true"
   ];
+
+  function myStopFunction() {
+    clearTimeout(clockFunction);
+  }
+
+  //gameover
+  function gameOver() {
+    let elements = $(".icon").filter(function() {
+      return $(this).css("opacity") === "1";
+    });
+
+    if (elements.length === 16) {
+      myStopFunction();
+
+      $(".end-message").html(
+        "Game over.Restart to play again.Your time " + clock
+      );
+      $("#game-over").dialog({
+        position: { my: "left top", at: "left top" },
+        width: "auto",
+        create: function(event, ui) {
+          $(this).css("maxWidth", "600px");
+        }
+      });
+    }
+  }
+
+  //timer
+  function setTimer() {
+    clockFunction = setInterval(function() {
+      seconds++;
+      if (seconds === 60) {
+        minutes++;
+        seconds = 0;
+      }
+      if (minutes === 60) {
+        hours++;
+        minutes = 0;
+      }
+      clock = hours + ":" + minutes + ":" + seconds;
+      $(".timer").html(hours + ":" + minutes + ":" + seconds);
+    }, 1000);
+    return clock;
+  }
   //shuffling cards
   function shuffleCards() {
     let j, x, i;
@@ -38,7 +87,7 @@ $(document).ready(function() {
       $(".canvas").append('<div class= "row" id =' + i + ">" + "</div>");
       for (let j = 0; j < c; j++) {
         $("#" + i).append(
-          '<div class= "block col-xs-3 col-sm-3"><img class = "icon img img-fluid img-responsive" src =' +
+          '<div class= "block col-xs-3 col-sm-3"><img class = "icon img img-responsive center-block" src =' +
             icons[index] +
             ".png" +
             ">" +
@@ -61,11 +110,19 @@ $(document).ready(function() {
     let p2;
     let imgOneSrc;
     let imgTwoSrc;
+
     clicks++;
+
+    if (clicks === 1) {
+      setTimer();
+    }
 
     $(child).css({
       opacity: "1"
     });
+
+    gameOver();
+
     cardPair = $(cardPair);
     cardPair.push($(this));
     if (cardPair.length === 2) {
@@ -86,7 +143,6 @@ $(document).ready(function() {
         }, 700);
       }
       cardPair.length = 0;
-      event.preventDefault();
     }
   });
   //show dialog
