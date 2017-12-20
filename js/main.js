@@ -1,6 +1,7 @@
 $(document).ready(function() {
   let clicks = 0;
   let moves  = 0;
+  let rating = 3;
   let cardPair = [];
   let seconds = 0;
   let minutes = 0;
@@ -41,7 +42,8 @@ $(document).ready(function() {
       myStopFunction();
 
       $(".end-message").html(
-        "Game over.Restart to play again.Your time " + clock
+        "Game over.Restart to play again.Your time "+"<br>"
+        + "Time:"+clock +"<br>"+ "Rating:"+rating
       );
       $("#game-over").dialog({
         position: { my: "left top", at: "left top" },
@@ -128,6 +130,18 @@ $(document).ready(function() {
     cardPair.push($(this));
     if (cardPair.length === 2) {
       moves++;
+      if(moves === 8) {
+        $('.rating-three').css('color','#fff')
+        rating--
+      }
+      if(moves === 16) {
+        $('.rating-two').css('color','#fff')
+        rating--
+      }
+      if(moves === 20) {
+        $('.rating-one').css('color','#fff')
+        rating--
+      }
 
       p1 = cardPair[0][0];
       p1 = $(p1).children();
@@ -145,7 +159,6 @@ $(document).ready(function() {
           p2.style.opacity = "0";
         }, 700);
       }
-      console.log(moves)
       cardPair.length = 0;
     }
   });

@@ -24,14 +24,13 @@
 }
 
 *:focus {
-    outline: 0 !important;
-} {
-  outline:none;
+    outline: 0 ;
 }
 
 .glyphicon-star {
   color: #f45942;
   font-size: 20px;
+  text-shadow: -1px 0 #f45942, 0 1px #f45942, 1px 0 #f45942, 0 -1px #f45942;
 }
 
 .restart:hover {
