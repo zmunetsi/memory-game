@@ -19,6 +19,21 @@
   padding: 10px;
 }
 
+.btn-rating {
+  background: none;
+}
+
+*:focus {
+    outline: 0 !important;
+} {
+  outline:none;
+}
+
+.glyphicon-star {
+  color: #f45942;
+  font-size: 20px;
+}
+
 .restart:hover {
   cursor: pointer;
 }

@@ -1,5 +1,6 @@
 $(document).ready(function() {
   let clicks = 0;
+  let moves  = 0;
   let cardPair = [];
   let seconds = 0;
   let minutes = 0;
@@ -126,6 +127,8 @@ $(document).ready(function() {
     cardPair = $(cardPair);
     cardPair.push($(this));
     if (cardPair.length === 2) {
+      moves++;
+
       p1 = cardPair[0][0];
       p1 = $(p1).children();
       p2 = cardPair[1][0];
@@ -142,6 +145,7 @@ $(document).ready(function() {
           p2.style.opacity = "0";
         }, 700);
       }
+      console.log(moves)
       cardPair.length = 0;
     }
   });
