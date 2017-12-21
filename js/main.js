@@ -39,6 +39,10 @@ $(document).ready(function() {
   function myStopFunction() {
     clearTimeout(clockFunction);
   }
+  //showing Moves
+  function showMoves() {
+    $('.moves').html(moves);
+  }
 
   //gameover and show popup message.
   function gameOver() {
@@ -138,13 +142,12 @@ $(document).ready(function() {
     });
 
 
-
-    gameOver();
-
     cardPair = $(cardPair);
     cardPair.push($(this));
     if (cardPair.length === 2) {
+
       moves++;
+      showMoves();
       if (moves < 8){
         rating= 3
       }
@@ -174,6 +177,7 @@ $(document).ready(function() {
         }, 700);
       }
       cardPair.length = 0;
+      gameOver();
     }
   });
   //show dialog

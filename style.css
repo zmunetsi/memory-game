@@ -45,6 +45,10 @@
   margin: 4px;
 }
 
+.moves {
+  color: #f45942;
+}
+
 #dialog, #game-over {
   display: none;
   background: #000;
