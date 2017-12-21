@@ -18,9 +18,9 @@ Click restart button to replay the game...
 This is a memory game and the objective is for the player win the game while making fewer moves and high rating.
 
 ## Dependencies ##
-Markup : 1. Bootstrap 3.3.7
-         2. Jquery 3.2.1
-         3. Jquery UI 1.12.1
+1. Bootstrap 3.3.7,
+2. Jquery 3.2.1,
+3. Jquery UI 1.12.1
 ## Resources ##
-Markup : 1. Google Fonts(Cabin + Sketch)
-         2. Free icons from Flaticon.com
+1. Google Fonts(Cabin + Sketch),
+2. Free icons from Flaticon.com
