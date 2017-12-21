@@ -35,16 +35,28 @@ $(document).ready(function() {
     "https://github.com/zmunetsi/memory-game/blob/master/images/icons/eight.png?raw=true"
   ];
 
-  //reset timer.
+  /**
+  * clocks the clock when the game is over.
+  */
   function myStopFunction() {
     clearTimeout(clockFunction);
   }
-  //showing Moves
+
+  /**
+  * Selects the dom element and shows the number of
+  * moves made by player.
+  */
   function showMoves() {
     $('.moves').html(moves);
   }
 
-  //gameover and show popup message.
+  /**
+  * Loops over all the images and returns a new array with
+  * with opacity of 1.Visible images.
+  * If all images are visible-array length === 16.
+  * The game will be over.
+  * Show a popup message with the statistics of the game.
+  */
   function gameOver() {
     let elements = $(".icon").filter(function() {
       return $(this).css("opacity") === "1";
@@ -68,7 +80,7 @@ $(document).ready(function() {
     }
   }
 
-  //timer
+  // Run  a timer showing hours , minutes, seconds
   function setTimer() {
     clockFunction = setInterval(function() {
       seconds++;
@@ -85,7 +97,11 @@ $(document).ready(function() {
     }, 1000);
     return clock;
   }
-  //shuffling cards
+
+  /**
+  * returns a new array of icons in
+  * different indices each time the game is started.
+  */
   function shuffleCards() {
     let j, x, i;
     for (i = icons.length - 1; i > 0; i--) {
@@ -98,7 +114,11 @@ $(document).ready(function() {
   }
   let index = 0;
 
-  //make grid
+  /**
+  * function to make a grid
+  * @param r - number of rows
+  * @param c - number of columns
+  */
   function makeGrid(r, c) {
     for (let i = 0; i < r; i++) {
       $(".canvas").append('<div class= "row" id =' + i + ">" + "</div>");
@@ -180,7 +200,8 @@ $(document).ready(function() {
       gameOver();
     }
   });
-  //show dialog
+
+  //jquery ui dependency to show a message popup
   $(".instructions").on("click", function() {
     $("#dialog").dialog({
       position: { my: "left top", at: "left top" },
