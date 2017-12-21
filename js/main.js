@@ -44,6 +44,7 @@ $(document).ready(function() {
       $(".end-message").html(
         "Game over.Restart to play again.Your time "+"<br>"
         + "Time:"+clock +"<br>"+ "Rating:"+rating
+        +"<br>" +"Moves:"+moves
       );
       $("#game-over").dialog({
         position: { my: "left top", at: "left top" },
@@ -130,15 +131,18 @@ $(document).ready(function() {
     cardPair.push($(this));
     if (cardPair.length === 2) {
       moves++;
-      if(moves === 8) {
+      if (moves < 8){
+        rating= 3
+      }
+      if(moves === 24) {
         $('.rating-three').css('color','#fff')
         rating--
       }
-      if(moves === 16) {
+      if(moves ===30) {
         $('.rating-two').css('color','#fff')
         rating--
       }
-      if(moves === 20) {
+      if(moves === 36) {
         $('.rating-one').css('color','#fff')
         rating--
       }
