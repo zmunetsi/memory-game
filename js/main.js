@@ -93,7 +93,7 @@ $(document).ready(function() {
     return icons;
   }
   let index = 0;
-  
+
   //make grid
   function makeGrid(r, c) {
     for (let i = 0; i < r; i++) {
@@ -124,6 +124,9 @@ $(document).ready(function() {
     let imgOneSrc;
     let imgTwoSrc;
 
+    if($(child[0]).css("opacity") === "1"){
+      return false;
+    }
     clicks++;
 
     if (clicks === 1) {
@@ -134,6 +137,8 @@ $(document).ready(function() {
       opacity: "1"
     });
 
+
+
     gameOver();
 
     cardPair = $(cardPair);
@@ -143,16 +148,12 @@ $(document).ready(function() {
       if (moves < 8){
         rating= 3
       }
-      if(moves === 24) {
+      if(moves === 22) {
         $('.rating-three').css('color','#fff')
         rating--
       }
-      if(moves ===30) {
+      if(moves === 30) {
         $('.rating-two').css('color','#fff')
-        rating--
-      }
-      if(moves === 36) {
-        $('.rating-one').css('color','#fff')
         rating--
       }
 
