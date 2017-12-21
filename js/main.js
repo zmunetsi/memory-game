@@ -1,3 +1,10 @@
+
+/**
+Author: Munetsi Zunguzira
+Title: Memory Game
+Project: Udacity Front-End Nanodegree
+ **/
+
 $(document).ready(function() {
   let clicks = 0;
   let moves  = 0;
@@ -28,11 +35,12 @@ $(document).ready(function() {
     "https://github.com/zmunetsi/memory-game/blob/master/images/icons/eight.png?raw=true"
   ];
 
+  //reset timer.
   function myStopFunction() {
     clearTimeout(clockFunction);
   }
 
-  //gameover
+  //gameover and show popup message.
   function gameOver() {
     let elements = $(".icon").filter(function() {
       return $(this).css("opacity") === "1";
@@ -85,7 +93,8 @@ $(document).ready(function() {
     return icons;
   }
   let index = 0;
-  //make squares
+  
+  //make grid
   function makeGrid(r, c) {
     for (let i = 0; i < r; i++) {
       $(".canvas").append('<div class= "row" id =' + i + ">" + "</div>");
